@@ -10,9 +10,7 @@ GitHub Pages:
 
 `https://brickerp.github.io/ai-agent-career-stage-summary/`
 
-Interactive public map:
-
-`https://brickerp.github.io/ai-agent-career-stage-summary/map.html`
+This now opens an Understand-Anything style interactive dashboard, matching the local dashboard experience but backed by a sanitized public graph.
 
 ## What This Stage Was About
 
@@ -53,22 +51,22 @@ flowchart LR
 - [Architecture map](ARCHITECTURE_MAP.zh.md)
 - [Public onboarding note](ONBOARDING.zh.md)
 - [Sanitization notes](SECURITY_AND_SANITIZATION.md)
-- [Static showcase](docs/index.html)
-- [Interactive public map](docs/map.html)
-- [Public domain map data](data/public-domain-map.json)
+- [Understand-Anything dashboard build](docs/index.html)
+- [Sanitized dashboard graph](docs/knowledge-graph.json)
+- [Sanitized public domain map data](data/public-domain-map.json)
 
 ## What Is Not Published
 
 This repository does not include:
 
 - private source code
-- complete repository knowledge graphs
+- complete private repository knowledge graphs
 - internal file paths or symbol maps
 - credentials, tokens, secrets, environment files, or service endpoints
 - customer, participant, transcript, or interview data
 - proprietary implementation details
 
-The public version keeps only high-level architecture and personal engineering reflection.
+The public dashboard graph keeps only high-level architecture and personal engineering reflection.
 
 ## License
 

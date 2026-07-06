@@ -1,0 +1,10 @@
+{
+  "lastAnalyzedAt": "2026-07-06T13:40:45.793Z",
+  "gitCommitHash": "public-sanitized-summary",
+  "version": "1.0.0",
+  "analyzedFiles": 32,
+  "theme": {
+    "presetId": "dark-ocean",
+    "accentId": "ocean"
+  }
+}

@@ -2,12 +2,12 @@
 
 This repository is a public summary, not an internal archive.
 
-The source material for this reflection included a private multi-repository architecture review and personal notes. Before publication, the content was reduced to high-level product and engineering concepts.
+The source material for this reflection included a private multi-repository architecture review and personal notes. Before publication, the content was reduced to high-level product and engineering concepts, then rebuilt as a small public dashboard graph.
 
 ## Excluded From This Public Repository
 
 - private source code
-- full knowledge graph output
+- full private knowledge graph output
 - file-level dependency graph
 - private repository paths
 - internal service endpoints
@@ -22,7 +22,7 @@ The source material for this reflection included a private multi-repository arch
 - high-level domain map
 - public career-stage reflection
 - general architecture lessons
-- sanitized diagrams
+- sanitized dashboard graph and diagrams
 - public-facing onboarding note
 
 ## Publication Rule
