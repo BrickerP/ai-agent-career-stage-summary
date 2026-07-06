@@ -10,6 +10,10 @@ GitHub Pages:
 
 `https://brickerp.github.io/ai-agent-career-stage-summary/`
 
+Interactive public map:
+
+`https://brickerp.github.io/ai-agent-career-stage-summary/map.html`
+
 ## What This Stage Was About
 
 My work during this stage sat at the intersection of:
@@ -50,6 +54,7 @@ flowchart LR
 - [Public onboarding note](ONBOARDING.zh.md)
 - [Sanitization notes](SECURITY_AND_SANITIZATION.md)
 - [Static showcase](docs/index.html)
+- [Interactive public map](docs/map.html)
 - [Public domain map data](data/public-domain-map.json)
 
 ## What Is Not Published
