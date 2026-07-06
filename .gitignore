@@ -8,6 +8,6 @@ build/
 
 # Do not commit raw private analysis exports.
 .understand-anything/
-knowledge-graph.json
+/knowledge-graph.json
 analysis-summary.json
 repo-clone-validation.tsv

@@ -1,0 +1,753 @@
+{
+  "version": "1.0.0",
+  "kind": "codebase",
+  "project": {
+    "name": "AI Agent Product Engineering - Public Career Map",
+    "languages": [
+      "zh",
+      "typescript",
+      "python",
+      "markdown",
+      "yaml"
+    ],
+    "frameworks": [
+      "React",
+      "MCP",
+      "CLI",
+      "Voice Runtime",
+      "E2E",
+      "GitHub Pages"
+    ],
+    "description": "脱敏公开版 Understand-Anything dashboard：展示 AI agent 产品工程阶段总结的高层业务域、流程、服务抽象和质量闭环。",
+    "analyzedAt": "2026-07-06T13:40:45.793Z",
+    "gitCommitHash": "public-sanitized-summary"
+  },
+  "nodes": [
+    {
+      "id": "domain:research-platform",
+      "type": "domain",
+      "name": "研究平台主域",
+      "summary": "Study、招募、访谈、报告和 workspace 状态组成的核心产品链路。",
+      "tags": [
+        "study",
+        "recruit",
+        "interview",
+        "report"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "domain:agent-interface",
+      "type": "domain",
+      "name": "Agent 接入域",
+      "summary": "MCP、CLI、Skill 和插件把自然语言意图转成可验证产品操作。",
+      "tags": [
+        "mcp",
+        "cli",
+        "skill",
+        "tools"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "domain:voice-runtime",
+      "type": "domain",
+      "name": "语音访谈运行域",
+      "summary": "实时语音会话、房间状态、媒体流、中断处理和回放证据。",
+      "tags": [
+        "voice",
+        "rtc",
+        "live-session"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "domain:participant-supply",
+      "type": "domain",
+      "name": "参与者供给与激励域",
+      "summary": "样本招募、容量控制、参与者机会、钱包和激励流程。",
+      "tags": [
+        "participants",
+        "recruit",
+        "incentives"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "domain:report-quality",
+      "type": "domain",
+      "name": "报告质量与评测域",
+      "summary": "报告 artifact、事实锁定、可编辑交付物、benchmark 和回归信号。",
+      "tags": [
+        "report",
+        "artifact",
+        "benchmark"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "domain:growth-onboarding",
+      "type": "domain",
+      "name": "官网增长与 Onboarding 域",
+      "summary": "官网、落地页、登录桥接、用户进入 SaaS 的增长和 onboarding 表面。",
+      "tags": [
+        "website",
+        "growth",
+        "onboarding"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "domain:infra-release",
+      "type": "domain",
+      "name": "基础设施与发布验证域",
+      "summary": "Preview、E2E、gateway、环境隔离和 release gate 提供上线信心。",
+      "tags": [
+        "e2e",
+        "preview",
+        "release"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "flow:study-to-report",
+      "type": "flow",
+      "name": "Study -> Report 主流程",
+      "summary": "从研究设计到样本、访谈、素材、洞察报告的主业务流。",
+      "tags": [
+        "core-flow"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "flow:agent-tool-call",
+      "type": "flow",
+      "name": "Agent Tool Call 流程",
+      "summary": "Agent 通过 skill/CLI/MCP 触发后端契约并拿到结构化结果。",
+      "tags": [
+        "agent-flow"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "flow:voice-session",
+      "type": "flow",
+      "name": "Voice Session 流程",
+      "summary": "语音 runtime 把实时会话转回可追踪访谈事实和回放素材。",
+      "tags": [
+        "voice-flow"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "flow:report-eval",
+      "type": "flow",
+      "name": "Report Evaluation Loop",
+      "summary": "报告交付物进入 benchmark、评测和回归，用于持续改进。",
+      "tags": [
+        "quality-flow"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "flow:release-gate",
+      "type": "flow",
+      "name": "Preview Release Gate",
+      "summary": "发布前用真实 workflow smoke 和环境隔离降低线上风险。",
+      "tags": [
+        "release-flow"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "step:study-design",
+      "type": "step",
+      "name": "Study Design",
+      "summary": "研究目标、问题、样本条件和访谈计划形成可执行配置。",
+      "tags": [
+        "study"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "step:recruit-targeting",
+      "type": "step",
+      "name": "Recruit Targeting",
+      "summary": "把研究条件转成参与者筛选、配额和触达策略。",
+      "tags": [
+        "recruit"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "step:interview-orchestration",
+      "type": "step",
+      "name": "Interview Orchestration",
+      "summary": "组织 AI/真人访谈、会话状态和素材采集。",
+      "tags": [
+        "interview"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "step:report-artifact",
+      "type": "step",
+      "name": "Report Artifact",
+      "summary": "从访谈事实和结构化结果生成可交付报告。",
+      "tags": [
+        "report"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "step:agent-intent",
+      "type": "step",
+      "name": "Agent Intent",
+      "summary": "自然语言请求被解析成明确、可审计的工具动作。",
+      "tags": [
+        "agent"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "step:mcp-cli-execution",
+      "type": "step",
+      "name": "MCP / CLI Execution",
+      "summary": "本地或远端工具层调用产品 API 并管理返回结构。",
+      "tags": [
+        "mcp",
+        "cli"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "step:structured-result",
+      "type": "step",
+      "name": "Structured Result",
+      "summary": "工具结果返回为 agent 可读、用户可验证的结构化响应。",
+      "tags": [
+        "result"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "step:voice-room",
+      "type": "step",
+      "name": "Voice Room",
+      "summary": "实时房间、媒体流、打断和用户状态构成语音 runtime 的核心。",
+      "tags": [
+        "voice"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "step:transcript-evidence",
+      "type": "step",
+      "name": "Transcript Evidence",
+      "summary": "语音与文本素材被转成报告可以引用的事实证据。",
+      "tags": [
+        "evidence"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "step:benchmark-cases",
+      "type": "step",
+      "name": "Benchmark Cases",
+      "summary": "代表性案例和历史报告形成质量评测基准。",
+      "tags": [
+        "benchmark"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "step:regression-signal",
+      "type": "step",
+      "name": "Regression Signal",
+      "summary": "E2E、评分和人工信号共同判断报告质量是否退化。",
+      "tags": [
+        "regression"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "step:preview-smoke",
+      "type": "step",
+      "name": "Preview Smoke",
+      "summary": "在 preview 环境跑真实路径，确认关键业务行为仍可用。",
+      "tags": [
+        "preview"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "step:release-confidence",
+      "type": "step",
+      "name": "Release Confidence",
+      "summary": "把 CI、E2E、gateway 和环境状态收束成可发布证据。",
+      "tags": [
+        "release"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "service:web-product",
+      "type": "service",
+      "name": "Web Product Surface",
+      "summary": "用户研究产品的主要交互界面，承载复杂 workflow 状态。",
+      "tags": [
+        "frontend",
+        "workflow"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "service:backend-contract",
+      "type": "service",
+      "name": "Backend API Contract",
+      "summary": "业务 API、权限、异步任务和数据模型是 agent 与 UI 共享的真相来源。",
+      "tags": [
+        "backend",
+        "api"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "service:agent-tooling",
+      "type": "service",
+      "name": "Agent Tooling Layer",
+      "summary": "Skill、CLI、MCP 和 plugin 共同组成 agent 入口层。",
+      "tags": [
+        "tools",
+        "agent"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "service:voice-runtime",
+      "type": "service",
+      "name": "Voice Runtime Service",
+      "summary": "实时语音 runtime 与产品状态解耦实现，但通过契约对齐。",
+      "tags": [
+        "voice",
+        "runtime"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "service:report-pipeline",
+      "type": "service",
+      "name": "Report Pipeline",
+      "summary": "报告生成、编辑、事实锁定和多格式 artifact 交付。",
+      "tags": [
+        "report",
+        "artifact"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "service:e2e-harness",
+      "type": "service",
+      "name": "E2E Harness",
+      "summary": "跨环境验证真实用户路径，用失败证据定位系统边界问题。",
+      "tags": [
+        "e2e",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "service:benchmark-loop",
+      "type": "service",
+      "name": "Benchmark Loop",
+      "summary": "案例、导出、评分和训练/评测材料形成改进闭环。",
+      "tags": [
+        "benchmark",
+        "quality"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "domain:research-platform",
+      "target": "flow:study-to-report",
+      "type": "contains_flow",
+      "direction": "forward",
+      "description": "研究平台主域承载从 Study 到 Report 的主流程。",
+      "weight": 0.75
+    },
+    {
+      "source": "flow:study-to-report",
+      "target": "step:study-design",
+      "type": "flow_step",
+      "direction": "forward",
+      "description": "先定义研究目标和问题。",
+      "weight": 0.75
+    },
+    {
+      "source": "step:study-design",
+      "target": "step:recruit-targeting",
+      "type": "flow_step",
+      "direction": "forward",
+      "description": "研究配置进入招募和样本供给。",
+      "weight": 0.75
+    },
+    {
+      "source": "step:recruit-targeting",
+      "target": "step:interview-orchestration",
+      "type": "flow_step",
+      "direction": "forward",
+      "description": "合格参与者进入访谈编排。",
+      "weight": 0.75
+    },
+    {
+      "source": "step:interview-orchestration",
+      "target": "step:report-artifact",
+      "type": "flow_step",
+      "direction": "forward",
+      "description": "访谈素材和结构化事实生成报告 artifact。",
+      "weight": 0.75
+    },
+    {
+      "source": "domain:participant-supply",
+      "target": "step:recruit-targeting",
+      "type": "contains_flow",
+      "direction": "forward",
+      "description": "参与者供给域支撑招募策略和配额。",
+      "weight": 0.75
+    },
+    {
+      "source": "domain:voice-runtime",
+      "target": "flow:voice-session",
+      "type": "contains_flow",
+      "direction": "forward",
+      "description": "语音运行域支撑实时访谈流程。",
+      "weight": 0.75
+    },
+    {
+      "source": "flow:voice-session",
+      "target": "step:voice-room",
+      "type": "flow_step",
+      "direction": "forward",
+      "description": "实时房间和媒体流是语音会话入口。",
+      "weight": 0.75
+    },
+    {
+      "source": "step:voice-room",
+      "target": "step:transcript-evidence",
+      "type": "flow_step",
+      "direction": "forward",
+      "description": "会话素材转成可引用证据。",
+      "weight": 0.75
+    },
+    {
+      "source": "step:transcript-evidence",
+      "target": "step:report-artifact",
+      "type": "cross_domain",
+      "direction": "forward",
+      "description": "语音证据回到报告生成链路。",
+      "weight": 0.75
+    },
+    {
+      "source": "domain:agent-interface",
+      "target": "flow:agent-tool-call",
+      "type": "contains_flow",
+      "direction": "forward",
+      "description": "Agent 接入域包含工具调用主流程。",
+      "weight": 0.75
+    },
+    {
+      "source": "flow:agent-tool-call",
+      "target": "step:agent-intent",
+      "type": "flow_step",
+      "direction": "forward",
+      "description": "用户意图先被转成工具动作。",
+      "weight": 0.75
+    },
+    {
+      "source": "step:agent-intent",
+      "target": "step:mcp-cli-execution",
+      "type": "flow_step",
+      "direction": "forward",
+      "description": "工具层执行产品契约。",
+      "weight": 0.75
+    },
+    {
+      "source": "step:mcp-cli-execution",
+      "target": "step:structured-result",
+      "type": "flow_step",
+      "direction": "forward",
+      "description": "执行结果回到 agent 和用户。",
+      "weight": 0.75
+    },
+    {
+      "source": "step:mcp-cli-execution",
+      "target": "service:backend-contract",
+      "type": "depends_on",
+      "direction": "forward",
+      "description": "工具层依赖稳定后端 API。",
+      "weight": 0.75
+    },
+    {
+      "source": "domain:report-quality",
+      "target": "flow:report-eval",
+      "type": "contains_flow",
+      "direction": "forward",
+      "description": "报告质量域包含评测和回归闭环。",
+      "weight": 0.75
+    },
+    {
+      "source": "flow:report-eval",
+      "target": "step:benchmark-cases",
+      "type": "flow_step",
+      "direction": "forward",
+      "description": "先准备代表性报告/研究案例。",
+      "weight": 0.75
+    },
+    {
+      "source": "step:benchmark-cases",
+      "target": "step:regression-signal",
+      "type": "flow_step",
+      "direction": "forward",
+      "description": "评测结果变成质量退化信号。",
+      "weight": 0.75
+    },
+    {
+      "source": "step:regression-signal",
+      "target": "service:report-pipeline",
+      "type": "validates",
+      "direction": "forward",
+      "description": "质量信号验证报告 pipeline。",
+      "weight": 0.75
+    },
+    {
+      "source": "domain:infra-release",
+      "target": "flow:release-gate",
+      "type": "contains_flow",
+      "direction": "forward",
+      "description": "基础设施域包含发布闸流程。",
+      "weight": 0.75
+    },
+    {
+      "source": "flow:release-gate",
+      "target": "step:preview-smoke",
+      "type": "flow_step",
+      "direction": "forward",
+      "description": "先在 preview 运行真实路径 smoke。",
+      "weight": 0.75
+    },
+    {
+      "source": "step:preview-smoke",
+      "target": "step:release-confidence",
+      "type": "flow_step",
+      "direction": "forward",
+      "description": "验证证据形成发布信心。",
+      "weight": 0.75
+    },
+    {
+      "source": "service:e2e-harness",
+      "target": "step:preview-smoke",
+      "type": "triggers",
+      "direction": "forward",
+      "description": "E2E harness 执行 preview smoke。",
+      "weight": 0.75
+    },
+    {
+      "source": "service:web-product",
+      "target": "domain:research-platform",
+      "type": "serves",
+      "direction": "forward",
+      "description": "Web 产品表面承载研究平台操作。",
+      "weight": 0.75
+    },
+    {
+      "source": "service:backend-contract",
+      "target": "domain:research-platform",
+      "type": "serves",
+      "direction": "forward",
+      "description": "后端契约是主业务真相来源。",
+      "weight": 0.75
+    },
+    {
+      "source": "service:agent-tooling",
+      "target": "domain:agent-interface",
+      "type": "serves",
+      "direction": "forward",
+      "description": "工具层暴露 agent 入口。",
+      "weight": 0.75
+    },
+    {
+      "source": "service:voice-runtime",
+      "target": "domain:voice-runtime",
+      "type": "serves",
+      "direction": "forward",
+      "description": "语音 runtime 支撑实时访谈。",
+      "weight": 0.75
+    },
+    {
+      "source": "service:report-pipeline",
+      "target": "domain:report-quality",
+      "type": "serves",
+      "direction": "forward",
+      "description": "报告 pipeline 支撑质量敏感产物。",
+      "weight": 0.75
+    },
+    {
+      "source": "service:benchmark-loop",
+      "target": "domain:report-quality",
+      "type": "validates",
+      "direction": "forward",
+      "description": "benchmark loop 验证报告质量。",
+      "weight": 0.75
+    },
+    {
+      "source": "domain:growth-onboarding",
+      "target": "service:web-product",
+      "type": "routes",
+      "direction": "forward",
+      "description": "官网和 onboarding 把用户导入产品。",
+      "weight": 0.75
+    },
+    {
+      "source": "domain:infra-release",
+      "target": "service:e2e-harness",
+      "type": "depends_on",
+      "direction": "forward",
+      "description": "发布信心依赖可重复验证。",
+      "weight": 0.75
+    },
+    {
+      "source": "domain:agent-interface",
+      "target": "domain:research-platform",
+      "type": "cross_domain",
+      "direction": "forward",
+      "description": "Agent 工具最终进入研究平台业务契约。",
+      "weight": 0.75
+    },
+    {
+      "source": "domain:voice-runtime",
+      "target": "domain:report-quality",
+      "type": "cross_domain",
+      "direction": "forward",
+      "description": "语音证据最终影响报告可信度。",
+      "weight": 0.75
+    },
+    {
+      "source": "domain:infra-release",
+      "target": "domain:research-platform",
+      "type": "cross_domain",
+      "direction": "forward",
+      "description": "发布验证保护核心研究 workflow。",
+      "weight": 0.75
+    }
+  ],
+  "layers": [
+    {
+      "id": "layer:domains",
+      "name": "公开业务域",
+      "description": "脱敏后的产品和运行时高层边界。",
+      "nodeIds": [
+        "domain:research-platform",
+        "domain:agent-interface",
+        "domain:voice-runtime",
+        "domain:participant-supply",
+        "domain:report-quality",
+        "domain:growth-onboarding",
+        "domain:infra-release"
+      ]
+    },
+    {
+      "id": "layer:flows",
+      "name": "关键流程",
+      "description": "跨域 workflow 的高层流程。",
+      "nodeIds": [
+        "flow:study-to-report",
+        "flow:agent-tool-call",
+        "flow:voice-session",
+        "flow:report-eval",
+        "flow:release-gate"
+      ]
+    },
+    {
+      "id": "layer:steps",
+      "name": "流程步骤",
+      "description": "不暴露内部实现的核心执行步骤。",
+      "nodeIds": [
+        "step:study-design",
+        "step:recruit-targeting",
+        "step:interview-orchestration",
+        "step:report-artifact",
+        "step:agent-intent",
+        "step:mcp-cli-execution",
+        "step:structured-result",
+        "step:voice-room",
+        "step:transcript-evidence",
+        "step:benchmark-cases",
+        "step:regression-signal",
+        "step:preview-smoke",
+        "step:release-confidence"
+      ]
+    },
+    {
+      "id": "layer:services",
+      "name": "公开服务抽象",
+      "description": "对外可说明的服务/能力抽象，而非私有仓库或文件结构。",
+      "nodeIds": [
+        "service:web-product",
+        "service:backend-contract",
+        "service:agent-tooling",
+        "service:voice-runtime",
+        "service:report-pipeline",
+        "service:e2e-harness",
+        "service:benchmark-loop"
+      ]
+    }
+  ],
+  "tour": [
+    {
+      "order": 1,
+      "title": "先看 Study -> Report 主链路",
+      "description": "研究平台的核心是从 study 设计、招募、访谈到报告 artifact 的业务闭环。",
+      "nodeIds": [
+        "domain:research-platform",
+        "flow:study-to-report",
+        "step:study-design",
+        "step:report-artifact"
+      ]
+    },
+    {
+      "order": 2,
+      "title": "理解 Agent 如何进入产品",
+      "description": "Agent 入口不是 prompt 本身，而是 MCP/CLI/Skill 对稳定后端契约的调用。",
+      "nodeIds": [
+        "domain:agent-interface",
+        "flow:agent-tool-call",
+        "service:agent-tooling",
+        "service:backend-contract"
+      ]
+    },
+    {
+      "order": 3,
+      "title": "理解语音 runtime 的边界",
+      "description": "语音系统独立处理实时会话，但访谈事实和证据最终要回到报告链路。",
+      "nodeIds": [
+        "domain:voice-runtime",
+        "flow:voice-session",
+        "step:voice-room",
+        "step:transcript-evidence"
+      ]
+    },
+    {
+      "order": 4,
+      "title": "看质量与发布闭环",
+      "description": "报告 benchmark、E2E、preview smoke 和 release gate 共同把 AI workflow 变成可维护系统。",
+      "nodeIds": [
+        "domain:report-quality",
+        "flow:report-eval",
+        "domain:infra-release",
+        "flow:release-gate"
+      ]
+    }
+  ]
+}
