@@ -7,6 +7,7 @@ const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const dashboardRoot = process.env.UNDERSTAND_ANYTHING_DASHBOARD_ROOT;
 const docsDir = join(repoRoot, "docs");
 const basePath = "/ai-agent-career-stage-summary/";
+const buildVersion = process.env.PUBLIC_DASHBOARD_VERSION ?? `public-${Date.now()}`;
 
 if (!dashboardRoot) {
   throw new Error(
@@ -234,7 +235,17 @@ const config = {
 const build = spawnSync(
   "pnpm",
   ["exec", "vite", "build", "--config", "vite.config.demo.ts", "--base", basePath],
-  { cwd: dashboardRoot, stdio: "inherit" },
+  {
+    cwd: dashboardRoot,
+    stdio: "inherit",
+    env: {
+      ...process.env,
+      VITE_GRAPH_URL: `${basePath}knowledge-graph.json?v=${buildVersion}`,
+      VITE_DOMAIN_GRAPH_URL: `${basePath}domain-graph.json?v=${buildVersion}`,
+      VITE_META_URL: `${basePath}meta.json?v=${buildVersion}`,
+      VITE_CONFIG_URL: `${basePath}config.json?v=${buildVersion}`,
+    },
+  },
 );
 
 if (build.status !== 0) {
@@ -269,6 +280,7 @@ console.log(
     {
       docsDir,
       basePath,
+      buildVersion,
       nodes: nodes.length,
       edges: edges.length,
       layers: layers.length,
