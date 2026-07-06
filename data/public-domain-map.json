@@ -1,0 +1,49 @@
+{
+  "title": "AI Agent Product Engineering - Public Domain Map",
+  "sanitization": "High-level public summary only. No private code, paths, endpoints, secrets, customer data, or file-level graph.",
+  "domains": [
+    {
+      "id": "research-platform",
+      "name": "Research Platform",
+      "summary": "Study design, recruitment, interview workflow, reporting, and workspace-level product state."
+    },
+    {
+      "id": "agent-interface",
+      "name": "Agent Interface",
+      "summary": "MCP, CLI, skill, and plugin surfaces that convert natural-language intent into stable product operations."
+    },
+    {
+      "id": "voice-runtime",
+      "name": "Voice Runtime",
+      "summary": "Real-time interview sessions, media flow, room state, interruptions, and replayable evidence."
+    },
+    {
+      "id": "report-quality",
+      "name": "Report Quality",
+      "summary": "Artifact generation, fact locking, edit flows, benchmark feedback, and regression checks."
+    },
+    {
+      "id": "participant-supply",
+      "name": "Participant Supply",
+      "summary": "Recruitment, sample capacity, incentives, and participant workflow coordination."
+    },
+    {
+      "id": "growth-and-onboarding",
+      "name": "Growth and Onboarding",
+      "summary": "Public website, product entry, auth bridge, and conversion paths into the SaaS platform."
+    },
+    {
+      "id": "infra-release",
+      "name": "Infrastructure and Release",
+      "summary": "E2E validation, preview gates, environment isolation, gateway boundaries, and release confidence."
+    }
+  ],
+  "flows": [
+    ["research-platform", "participant-supply"],
+    ["participant-supply", "voice-runtime"],
+    ["voice-runtime", "report-quality"],
+    ["agent-interface", "research-platform"],
+    ["infra-release", "research-platform"],
+    ["growth-and-onboarding", "research-platform"]
+  ]
+}
