@@ -1,5 +1,7 @@
 # AI Agent Product Engineering - Career Stage Summary
 
+[![ci](https://github.com/BrickerP/ai-agent-career-stage-summary/actions/workflows/ci.yml/badge.svg)](https://github.com/BrickerP/ai-agent-career-stage-summary/actions/workflows/ci.yml)
+
 This repository is a public, sanitized career-stage summary of my work across an AI agent and user-research product platform.
 
 It is intentionally not a source-code dump and not an internal architecture archive. The goal is to preserve the engineering lessons, system-shaping decisions, and cross-domain product thinking from this stage of work, while leaving out private code, customer data, internal paths, credentials, and low-level implementation details.
@@ -67,6 +69,15 @@ This repository does not include:
 - proprietary implementation details
 
 The public dashboard graph keeps only high-level architecture and personal engineering reflection.
+
+## Validation
+
+CI runs `node scripts/validate-public.mjs` (Node 22+, no dependencies) on every push and pull request. It checks that:
+
+- the dashboard graph is consistent (unique node ids, edges/layers/tour reference real nodes, `domain-graph.json` matches `knowledge-graph.json`, `meta.json` agrees)
+- the GitHub Pages build in `docs/` references only files that exist
+- relative Markdown links resolve
+- nothing excluded by the sanitization rules is committed: raw private exports, env files, source maps, key material, token-shaped strings, or local absolute paths
 
 ## License
 
